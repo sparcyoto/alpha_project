@@ -1,12 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import Homes from '@/components/Home';
+import BrandPage from '@/components/BrandPage';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Homes />
-    </main>
+    <div>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <BrandPage />
+      </main>
+    </div>
   );
 }

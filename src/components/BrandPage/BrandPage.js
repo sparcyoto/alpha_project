@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-function Home(props) {
+function BrandPage(props) {
   return (
     <div>
       <Image
@@ -13,4 +13,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default BrandPage;
