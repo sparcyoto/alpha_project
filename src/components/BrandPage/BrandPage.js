@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import NavBar from '@/components/NavBar';
 
 import styles from './brandPage.module.scss';
 
@@ -8,6 +9,7 @@ function BrandPage(props) {
 
   return (
     <div className={styles.container}>
+      <NavBar />
       <Image
         src="/images/Hero_Image.png"
         width={400}
