@@ -1,3 +1,25 @@
 .container{
-    padding: 20rem;
+    display: flex;
+    justify-content: center;
+    // padding: 6rem;
+
+    width: 100vw;
+}
+
+.introContainer{
+        font-weight: 600;
+        font-size:1.25rem;
+        align-items: center;
+
+        margin-top: 3rem;
+}
+
+
+.introLandJob{
+    font-weight:600;
+    font-size:3rem;
+    margin-top:3rem;
+
+    // display: flex;
+    // flex-direction:  column;
 }

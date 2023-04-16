@@ -1,0 +1,29 @@
+.primary{
+    background: rgba(255, 0, 0, 0.886);
+    color:  white;
+
+    border-radius: 0.5rem;
+
+    &:hover{
+        color: rgba(191, 55, 55, 0.955);
+        transition: all .7s;
+    }
+}
+
+.secondary{
+    background: black;
+    border-radius: 0.5rem;
+
+    &:hover{
+        color: rgba(191, 55, 55, 0.955);
+        transition: all .7s;
+    }
+
+}
+
+.tertiary{
+    background: white;
+
+    border: 1px solid red;
+    border-radius: 0.5rem;
+}
