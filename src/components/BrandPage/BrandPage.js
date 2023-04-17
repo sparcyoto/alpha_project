@@ -10,6 +10,14 @@ const brandLogoList = [{ src: '/icons/apna.svg' }, { src: '/icons/Emiko.svg' },
   { src: '/icons/Infosys.svg' }, { src: '/icons/Mintifi.svg' }, { src: '/icons/Piramal.svg' },
   { src: '/icons/pwc.svg' }, { src: '/icons/Samsung.svg' }];
 
+const studentList = [{ studentImage: '/images/sanskar.jpg', companyImage: '/icons/apna.svg', name: 'sanskar' },
+  { studentImage: '/images/sanskar.jpg', companyImage: '/icons/apna.svg', name: 'sanskar' },
+  { studentImage: '/images/sanskar.jpg', companyImage: '/icons/apna.svg', name: 'sanskar' },
+  { studentImage: '/images/sanskar.jpg', companyImage: '/icons/apna.svg', name: 'sanskar' },
+  { studentImage: '/images/sanskar.jpg', companyImage: '/icons/apna.svg', name: 'sanskar' },
+  { studentImage: '/images/sanskar.jpg', companyImage: '/icons/apna.svg', name: 'sanskar' },
+  { studentImage: '/images/sanskar.jpg', companyImage: '/icons/apna.svg', name: 'sanskar' }];
+
 function BrandPage(props) {
   const renderRed = (text) => <span className="text-red-500">{text}</span>;
 
@@ -55,17 +63,61 @@ function BrandPage(props) {
     const a = 10;
 
     return (
-      <Marquee width="100%" direction="left" height="100px" speed={120}>
-        <div className="flex gap-x-10 h-[6rem] mt-4">
-          {brandLogoList.map((brandLogo) => (
+      <div>
+        <div className="flex justify-center">Trusted by the most trusted companies</div>
+        <Marquee width="100%" direction="left" height="100px" speed={120}>
+          <div className="flex gap-x-6 h-[6rem] mt-4">
+            {brandLogoList.map((brandLogo) => (
+              <Image
+                src={brandLogo?.src}
+                width={300}
+                height={300}
+              />
+            ))}
+          </div>
+        </Marquee>
+      </div>
+    );
+  };
+
+  function renderCard({ studentImage, name, companyImage }) {
+    const a = 10;
+    console.log('abc', name, companyImage);
+
+    return (
+      <span className="rounded-lg bg-green-100 flex-row items-center gap-y-4">
+        <div className="flex flex-col justify-center items-center  w-[20rem] h-[15rem]">
+          <div className="flex justify-center  ">
             <Image
-              src={brandLogo?.src}
-              width={300}
-              height={300}
+              src={studentImage}
+              width={50}
+              height={50}
+              className="rounded-full"
             />
-          ))}
+          </div>
+          <div className="flex justify-center mt-4">{name}</div>
+          <Image
+            src={companyImage}
+            width={200}
+            height={200}
+          />
         </div>
-      </Marquee>
+      </span>
+    );
+  }
+
+  const renderStudentCard = () => {
+    const a = 10;
+
+    return (
+      <div>
+        <div className="flex justify-center">Placement Offers at 70+ partner companies</div>
+        <Marquee width="100%" direction="left" height="100px" speed={80}>
+          <div className="flex gap-x-6  mt-4">
+            {studentList.map((student) => renderCard(student))}
+          </div>
+        </Marquee>
+      </div>
     );
   };
 
@@ -75,6 +127,7 @@ function BrandPage(props) {
         {renderIntro()}
       </div>
       {renderBrandLogos()}
+      {renderStudentCard()}
     </div>
   );
 }
