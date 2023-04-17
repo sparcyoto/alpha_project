@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 import NavBar from '@/components/NavBar';
 import Button, { BUTTON_VARIATION } from '@/components/Button';
 
@@ -8,8 +9,6 @@ import styles from './brandPage.module.scss';
 const brandLogoList = [{ src: '/icons/apna.svg' }, { src: '/icons/Emiko.svg' },
   { src: '/icons/Infosys.svg' }, { src: '/icons/Mintifi.svg' }, { src: '/icons/Piramal.svg' },
   { src: '/icons/pwc.svg' }, { src: '/icons/Samsung.svg' }];
-
-const brandLogoLists = [...brandLogoList, ...brandLogoList];
 
 function BrandPage(props) {
   const renderRed = (text) => <span className="text-red-500">{text}</span>;
@@ -56,9 +55,9 @@ function BrandPage(props) {
     const a = 10;
 
     return (
-      <marquee width="100%" direction="left" height="100px">
+      <Marquee width="100%" direction="left" height="100px" speed={120}>
         <div className="flex gap-x-10 h-[6rem] mt-4">
-          {brandLogoLists.map((brandLogo) => (
+          {brandLogoList.map((brandLogo) => (
             <Image
               src={brandLogo?.src}
               width={300}
@@ -66,7 +65,7 @@ function BrandPage(props) {
             />
           ))}
         </div>
-      </marquee>
+      </Marquee>
     );
   };
 
