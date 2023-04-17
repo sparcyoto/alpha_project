@@ -5,12 +5,16 @@ import Button, { BUTTON_VARIATION } from '@/components/Button';
 
 import styles from './brandPage.module.scss';
 
+const brandLogoList = [{ src: '/icons/apna.svg' }, { src: '/icons/Emiko.svg' },
+  { src: '/icons/Infosys.svg' }, { src: '/icons/Mintifi.svg' }, { src: '/icons/Piramal.svg' },
+  { src: '/icons/pwc.svg' }, { src: '/icons/Samsung.svg' }];
+
+const brandLogoLists = [...brandLogoList, ...brandLogoList];
+
 function BrandPage(props) {
   const renderRed = (text) => <span className="text-red-500">{text}</span>;
 
   const renderIntro = () => {
-    const abc = 2;
-
     const renderHeroBanner = () => (
       <Image
         src="/images/Hero_Image.png"
@@ -36,7 +40,7 @@ function BrandPage(props) {
             {' '}
             {renderRed('dream Internship/Job') }
           </div>
-          <div> Get trained, work on live projects and get hired in 12 Weeks</div>
+          <div>Get trained, work on live projects and get hired in 12 Weeks</div>
           <div className="flex gap-x-4 mt-10 mb-4 max-[500px]:flex-col gap-y-3">
             <Button variation={BUTTON_VARIATION.PRIMARY} className="py-4 px-8">Register for Free</Button>
             <Button variation={BUTTON_VARIATION.SECONDARY} className="py-4 px-8">Explore Tracks</Button>
@@ -48,10 +52,30 @@ function BrandPage(props) {
     );
   };
 
-  return (
+  const renderBrandLogos = () => {
+    const a = 10;
 
-    <div className={styles.container}>
-      {renderIntro()}
+    return (
+      <marquee width="100%" direction="left" height="100px">
+        <div className="flex gap-x-10 h-[6rem] mt-4">
+          {brandLogoLists.map((brandLogo) => (
+            <Image
+              src={brandLogo?.src}
+              width={300}
+              height={300}
+            />
+          ))}
+        </div>
+      </marquee>
+    );
+  };
+
+  return (
+    <div>
+      <div className={styles.container}>
+        {renderIntro()}
+      </div>
+      {renderBrandLogos()}
     </div>
   );
 }
