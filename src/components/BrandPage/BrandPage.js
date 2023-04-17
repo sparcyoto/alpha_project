@@ -64,7 +64,7 @@ function BrandPage(props) {
 
     return (
       <div>
-        <div className="flex justify-center">Trusted by the most trusted companies</div>
+        <div className="flex ">Trusted by the most trusted companies</div>
         <Marquee width="100%" direction="left" height="100px" speed={120}>
           <div className="flex gap-x-6 h-[6rem] mt-4">
             {brandLogoList.map((brandLogo) => (
@@ -85,8 +85,8 @@ function BrandPage(props) {
     console.log('abc', name, companyImage);
 
     return (
-      <span className="rounded-lg bg-green-100 flex-row items-center gap-y-4">
-        <div className="flex flex-col justify-center items-center  w-[20rem] h-[15rem]">
+      <span className="rounded-lg bg-green-100 flex-row items-center mr-10 overflow">
+        <div className="flex flex-col justify-center items-center p-[7rem]  h-[15rem]">
           <div className="flex justify-center  ">
             <Image
               src={studentImage}
@@ -110,12 +110,11 @@ function BrandPage(props) {
     const a = 10;
 
     return (
-      <div>
-        <div className="flex justify-center">Placement Offers at 70+ partner companies</div>
-        <Marquee width="100%" direction="left" height="100px" speed={80}>
-          <div className="flex gap-x-6  mt-4">
-            {studentList.map((student) => renderCard(student))}
-          </div>
+      <div className="mt-7">
+        <div className="flex ">Placement Offers at 70+ partner companies</div>
+        <Marquee direction="left" height="100px" speed={480}>
+          {studentList.map((student) => renderCard(student))}
+
         </Marquee>
       </div>
     );

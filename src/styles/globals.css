@@ -37,3 +37,7 @@ body {
 *{
   transition: all .3s;
 }
+
+div.marquee{
+  min-width: 50%;
+}
